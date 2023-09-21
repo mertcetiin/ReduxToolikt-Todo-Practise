@@ -7,6 +7,8 @@ function TodoList({ todos }) {
             {todos.map((item, id) => (
                 <div key={id}>
                     <p>{item}</p>
+                    <button>Edit</button>
+                    <button>Delete</button>
                 </div>
             ))}
         </div>

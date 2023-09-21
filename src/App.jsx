@@ -9,7 +9,10 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setTodos([...todos, e.target.name.value])
+    const newTodo = e.target.name.value
+    if (newTodo !== '') {
+      setTodos([...todos, newTodo])
+    }
     e.target.name.value = ''
   }
 
