@@ -1,6 +1,6 @@
 import React from 'react'
 
-function TodoList({ todos }) {
+function TodoList({ todos, handleDelete }) {
     return (
 
         <div>
@@ -8,7 +8,7 @@ function TodoList({ todos }) {
                 <div key={id}>
                     <p>{item}</p>
                     <button>Edit</button>
-                    <button>Delete</button>
+                    <button onClick={() => handleDelete(id)}>Delete</button>
                 </div>
             ))}
         </div>

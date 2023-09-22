@@ -16,10 +16,15 @@ function App() {
     e.target.name.value = ''
   }
 
+  const handleDelete = (index) => {
+    const updateDelete = todos.filter((item, id) => id !== index)
+    setTodos(updateDelete)
+  }
+
   return (
     <div>
       <Todo handleSubmit={handleSubmit} />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} handleDelete={handleDelete} />
     </div>
   )
 }
