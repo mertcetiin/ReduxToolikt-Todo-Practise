@@ -7,6 +7,7 @@ function App() {
 
   const [todos, setTodos] = useState([])
 
+
   const handleSubmit = (e) => {
     e.preventDefault()
     const newTodo = e.target.name.value
@@ -24,7 +25,7 @@ function App() {
   return (
     <div>
       <Todo handleSubmit={handleSubmit} />
-      <TodoList todos={todos} handleDelete={handleDelete} />
+      <TodoList todos={todos} handleDelete={handleDelete} setTodos={setTodos} />
     </div>
   )
 }
