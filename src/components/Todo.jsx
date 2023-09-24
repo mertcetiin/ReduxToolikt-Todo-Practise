@@ -1,13 +1,13 @@
 import React from 'react'
 
-function Todo({ handleSubmit }) {
+function Todo() {
 
     return (
         <div>
             <h1>Todo</h1>
             <hr />
             <br />
-            <form onSubmit={handleSubmit} >
+            <form >
                 <input type="text" name='name' />
                 <button type='submit'>Add</button>
             </form>

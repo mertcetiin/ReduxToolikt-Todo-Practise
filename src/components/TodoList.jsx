@@ -1,7 +1,13 @@
 import React from 'react'
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { handleDelete } from '../control/todoSlice';
 
-function TodoList({ todos, handleDelete, setTodos }) {
+function TodoList({ setTodos }) {
+
+    const { todos } = useSelector(state => state.todo)
+
+    const dispatch = useDispatch()
 
     const [editTodo, setEditTodo] = useState('');
     const [editTodoIndex, setEditTodoIndex] = useState(-1);
@@ -32,7 +38,7 @@ function TodoList({ todos, handleDelete, setTodos }) {
                     ) : (
                         <div>
                             <button onClick={() => handleEdit(id)}>Edit</button>
-                            <button onClick={() => handleDelete(id)}>Delete</button>
+                            <button onClick={() => dispatch(handleDelete())}>Delete</button>
                         </div>
                     )}
                 </div>
