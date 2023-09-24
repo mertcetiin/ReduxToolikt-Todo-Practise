@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
 const initialState = {
     todos: []
 }
@@ -13,10 +12,12 @@ export const todoSlice = createSlice({
             const updateDelete = state.filter((item, id) => id !== index)
             setTodos(updateDelete)
         },
-
+        handleSubmit: (state, action, e) => {
+            state.todos.push(action.payload);
+        }
     },
 })
 
-export const { handleDelete } = todoSlice.actions
+export const { handleDelete, handleSubmit } = todoSlice.actions
 
 export default todoSlice.reducer
