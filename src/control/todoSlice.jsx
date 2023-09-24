@@ -12,7 +12,7 @@ export const todoSlice = createSlice({
             const updateDelete = state.filter((item, id) => id !== index)
             setTodos(updateDelete)
         },
-        handleSubmit: (state, action, e) => {
+        handleSubmit: (state, action) => {
             state.todos.push(action.payload);
         }
     },

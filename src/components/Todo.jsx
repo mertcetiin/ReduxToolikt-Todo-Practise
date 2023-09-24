@@ -1,11 +1,9 @@
 import React from 'react'
 import { handleSubmit } from '../control/todoSlice';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 
 function Todo() {
-
-    const { todos } = useSelector(state => state.todo)
 
     const dispatch = useDispatch();
 
